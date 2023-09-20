@@ -7,17 +7,66 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+
     font-size: 1.6em;
     font-family: 'Montserrat', sans-serif;
-
-    height: 100vh;
+    
     background-color: black;
+}
+
+header {
+    height: 12vh;
 }
 
 main {
     display: flex;
     justify-content: center;
-    margin: 29vh auto;
+    align-items: center;
+
+    color: #fff;
+    height: 100%;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: absolute;
+    right: 0;
+    top: 15vh;
+
+    line-height: 2;
+    width: fit-content;
+    height: 60vh;
+    padding: 1em;
+
+    background-color: lightgray;
+}
+
+ul {
+    padding-inline-start: 0;
+    padding: 1em;
+}
+
+li {
+   margin: 2.2em auto;
+   list-style-type: none;
+   text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: all 1s;
+}
+
+a:hover {
     color: #fff;
 }
 
