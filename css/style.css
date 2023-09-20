@@ -9,9 +9,19 @@ html {
 body {
     font-size: 1.6em;
     font-family: 'Montserrat', sans-serif;
+
+    height: 100vh;
+    background-color: black;
 }
 
-footer {
+main {
+    display: flex;
+    justify-content: center;
+    margin: 29vh auto;
+    color: #fff;
+}
+
+footer, header {
     display: flex;
     flex-direction: column;
     align-items: center;
