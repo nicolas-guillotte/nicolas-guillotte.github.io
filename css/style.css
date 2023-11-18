@@ -1,116 +1,408 @@
-* {
+*
+{
     box-sizing: border-box;
 }
 
-html {
+html
+{
     font-size: 62.5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000;
 }
 
-body {
+body
+{
+    font-size: 1.6rem;
+    display: block;
+    margin: auto;
+    width: 60vh;
+    background-color: #fff;
+}
+
+header
+{
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left 50% bottom 25%;
+    color: #fff;
+    height: 30rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-
-    font-size: 1.6em;
-    font-family: 'Montserrat', sans-serif;
-    
-    background-color: black;
+    justify-content: center;
+    gap: 4rem;
+    text-align: center;
 }
 
-header {
-    height: 12vh;
+nav
+{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 2rem;
+    color: lightgray;
+    font-size: 1.3rem;
+    width: fit-content;
+    padding: 1.8rem 2.8rem 1.8rem 3rem;
+    border: solid rgba(128, 128, 128, 0.5) 1px;
+    border-bottom-right-radius: .8rem .8rem;
 }
 
-@media screen and (max-width: 615px) {
-    nav {
-        display: none;
-    }
+h1
+{
+    font-size: 3.4rem;
+    font-weight: bold;
 }
 
-nav {
-    background-color: lightgray;
-    padding: 2em;
-    margin: 1em;
-    font-size: 1em;
+h3{
+    font-size: 2rem;
+}
+
+#intro
+{
+    background-color: rgb(255, 248, 255);
+    text-align: center;
+    height: 50vh;
+    color: black;
+    line-height: 2rem;
+}
+
+h2
+{
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.title
+{
+    display: block;
+    margin: auto;
+    position: relative;
+    top: -2rem;
+    width: 18rem;
+    padding: 2rem;
+    order: 1000;
+    color: #000;
+}
+
+#intro .title
+{
+    background-color: rgb(255, 248, 255);
+}
+
+.intro-flex
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.7rem;
+    padding: 0 5rem;
+}
+
+#div-border
+{
+    border: solid black 1px;
+    border-radius: .8rem;
+    padding: 3rem;
+    font-size: 2.5rem;
+    line-height: 4rem;
+}
+
+.intro-buttons
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1.8rem;
+    margin-top: 3.8rem;
+}
+
+.intro-buttons button
+{
+    padding: 1.5rem 1rem;
+    border: solid rgb(65, 69, 76) 2px;
+    border-radius: .8rem .8rem;
+    font-weight: bold;
+}
+
+.intro-buttons #first-button
+{
+    background-color: rgb(65, 69, 76);
+    color: #fff;
+}
+
+.intro-buttons #second-button
+{
+    background-color: rgb(255, 248, 255);
+    color: rgb(65, 69, 76);
+}
+
+#bio
+{
+    background-color: rgb(22, 0, 179);
+    text-align: center;
+    height: 50vh ;
+    color: #fff;
+    line-height: 2rem;
+}
+
+#bio .title
+{
+    background-color: rgb(22, 0, 179);
+    color: #fff;
+}
+
+#bio .title-div
+{
+    display: block;
+    margin: auto;
+    width: 87%;
+}
+
+#bio img
+{
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+#bio p
+{
+    text-align: center;
+    padding: 2rem 0;
+    line-height: 2rem;
+}
+
+/* table
+{
+    width: 100%;
+}
+
+table th
+{
+    padding: 1rem;
+    font-weight: bold;
+}
+
+table .first-head
+{
+    background-color: rgb(105, 209, 231);
+    text-align: center;
+}
+
+table .second-head
+{
+    background-color: rgb(44, 47, 55);
+    color: #fff;
+    text-align: left;
+} */
+
+table td
+{
+    border: solid rgb(201, 202, 202) 1px;
+    border-collapse:collapse;
+    padding: 1rem;
 }
 
 ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-block-end: 0;
-    margin-block-start: 0;
-    padding-inline-start: 0;
+    padding: 3rem 0;
 }
 
-li {
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-    color: black;
+li
+{
+    margin-left: 6rem;
+    width: fit-content;
+    list-style: disc;
     font-weight: bold;
-    transition: all 1s;
 }
 
-a:hover {
-    color: #fff;
+.span
+{
+    font-weight: normal;
+    font-style: italic;
 }
 
-
-main {
-    color: #fff;
-    height: 75vh;
+span
+{
+    font-weight: bold;
+    font-style: italic;
 }
 
-main p {
-    font-size: 1.5em;
+/* #work
+{
+    background-color: rgb(239, 240, 240);
+    text-align: center;
+    height: 75rem;
+    color: black;
+    line-height: 2rem;
+}
+
+#work .title
+{
+    background-color: rgb(239, 240, 240);
+}
+
+#work #cards
+{
+    width: 90%;
+    margin: 2rem auto auto auto;
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    margin-top: 5em
 }
 
-.barre {
-    display: block;
-    margin: 3em auto;
-    max-width: 55%;
-    height: 1.3em;
-
-    border-radius: 20px;
-
-    background-color: lightgray;
-}
-
-.progress {
-    display: block;
-    position: relative;
-    width: 3%;
-    height: 1.3em;
-
-    border-radius: 20px;
-
-    transition: all 3s;
-
-    background-color: red;
-}
-
-.progress:hover {
-    width: 20%;
-}
-
-footer, header {
+#work article
+{
     display: flex;
     flex-direction: column;
-    align-items: center;
-
-    padding: 1.6em;
-    line-height: 0;
-
-    background-color: lightgray;
+    width: 31%;
 }
 
-footer img {
-    width: 1.6em;
+#work img
+{
+    display: block;
+    margin: auto;
+    width: 200px;
+    border: solid #fff 10px;
+}
+
+#work h4
+{
+    font-size: 3.2rem;
+    font-weight: bold;
+    padding: 3.5rem;
+}
+
+#work p
+{
+    text-align: center;
+    width: 83%;
+    margin: auto;
+    padding-bottom: 1.8rem;
+    border-bottom: solid rgb(105, 209, 231) 1px;
+}
+
+#work button
+{
+    width: 83%;
+    margin: auto;
+    margin-top: 1.8rem;
+    padding: 1.2rem;
+    background-color: rgb(105, 209, 231);
+    border: none;
+    color: #fff;
+}
+
+#contact
+{
+    background-color: rgb(44, 47, 55);
+    text-align: center;
+    height: 75rem;
+    color: lightgray;
+    line-height: 2rem;
+}
+
+#contact .flex-contact
+{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    gap: 2rem;
+}
+
+#contact .title
+{
+    background-color: rgb(44, 47, 55);
+    color: lightgray;
+}
+
+#contact #left
+{
+    width: 270%;
+    padding: 3rem 3rem 3rem 1rem;
+    border-right: lightgray solid 1px;
+}
+
+#contact #right
+{
+    padding: 3rem 5rem 0 3rem;
+    text-align: left;
+}
+
+#contact form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#contact form #div-subject,
+#contact form #div-nickname,
+#contact form #div-email,
+#contact form #div-message
+{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#contact form #div-gender
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+#contact input[type=text],
+#contact select
+{
+    background-color: rgb(86, 89, 95);
+    border: none;
+    height: 5rem;
+    padding: 1rem;
+}
+
+#contact #div-message input
+{
+    background-color: rgb(86, 89, 95);
+    border: none;
+    padding: 1rem;
+    height: 15rem;
+}
+
+#contact select
+{
+    color: rgb(90, 164, 218);
+}
+
+::placeholder
+{
+    color: rgb(90, 164, 218);
+    vertical-align: top;
+}
+
+.buttons-form
+{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.buttons-form input
+{
+    padding: 1.5rem 1rem;
+    border: none;
+    border-radius: .8rem .8rem;
+    font-weight: bold;
+    background-color: rgb(105, 209, 231);
+    color: rgb(65, 69, 76);
+} */
+
+footer
+{
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 6rem 5rem 5rem 6rem;
 }
