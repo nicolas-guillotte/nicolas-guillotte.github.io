@@ -1,30 +1,33 @@
-*
-{
+* {
     box-sizing: border-box;
 }
 
-html
-{
+html {
     font-size: 62.5%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #000;
 }
 
-body
-{
+
+body {
     font-size: 1.6rem;
     display: block;
     margin: auto;
-    width: 60vh;
+    max-width: 800px;
     background-color: #fff;
 }
 
-header
-{
+@media screen and (max-width: 600px) {
+    body {
+        min-width: 650px;
+    }
+}
+
+
+header {
     background-image: url('../images/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: left 50% bottom 25%;
     color: #fff;
     height: 30rem;
     display: flex;
@@ -34,8 +37,7 @@ header
     text-align: center;
 }
 
-nav
-{
+nav {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.1);
     display: flex;
@@ -48,34 +50,38 @@ nav
     border-bottom-right-radius: .8rem .8rem;
 }
 
-h1
-{
+h1 {
     font-size: 3.4rem;
     font-weight: bold;
 }
 
-h3{
+h2 {
     font-size: 2rem;
 }
 
-#intro
-{
-    background-color: rgb(255, 248, 255);
-    text-align: center;
-    height: 50vh;
-    color: black;
-    line-height: 2rem;
-}
 
-h2
-{
+h3 {
     font-size: 1.8rem;
     font-weight: bold;
     text-align: center;
 }
 
-.title
-{
+/* ... (autres styles restent inchangés) */
+
+#intro,
+#bio {
+    height: 60rem;
+}
+
+#intro {
+    background-color: rgb(255, 248, 255);
+    text-align: center;
+    color: black;
+    line-height: 2rem;
+}
+
+
+.title {
     display: block;
     margin: auto;
     position: relative;
@@ -86,13 +92,11 @@ h2
     color: #000;
 }
 
-#intro .title
-{
+#intro .title {
     background-color: rgb(255, 248, 255);
 }
 
-.intro-flex
-{
+.intro-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,8 +104,7 @@ h2
     padding: 0 5rem;
 }
 
-#div-border
-{
+#div-border {
     border: solid black 1px;
     border-radius: .8rem;
     padding: 3rem;
@@ -109,96 +112,81 @@ h2
     line-height: 4rem;
 }
 
-.intro-buttons
-{
+.intro-buttons {
     display: flex;
     flex-direction: row;
     gap: 1.8rem;
     margin-top: 3.8rem;
 }
 
-.intro-buttons button
-{
+.intro-buttons button {
     padding: 1.5rem 1rem;
     border: solid rgb(65, 69, 76) 2px;
     border-radius: .8rem .8rem;
     font-weight: bold;
 }
 
-.intro-buttons #first-button
-{
+.intro-buttons #first-button {
     background-color: rgb(65, 69, 76);
     color: #fff;
 }
 
-.intro-buttons #second-button
-{
+.intro-buttons #second-button {
     background-color: rgb(255, 248, 255);
     color: rgb(65, 69, 76);
 }
 
-#bio
-{
+#bio {
     background-color: rgb(22, 0, 179);
     text-align: center;
-    height: 50vh ;
     color: #fff;
     line-height: 2rem;
 }
 
-#bio .title
-{
+#bio .title {
     background-color: rgb(22, 0, 179);
     color: #fff;
 }
 
-#bio .title-div
-{
+#bio .title-div {
     display: block;
     margin: auto;
     width: 87%;
 }
 
-#bio img
-{
+#bio img {
     display: block;
     margin: auto;
     width: 100%;
 }
 
-#bio p
-{
+#bio p {
     text-align: center;
     padding: 2rem 0;
     line-height: 2rem;
 }
 
-/* table
-{
+/* table {
     width: 100%;
 }
 
-table th
-{
+table th {
     padding: 1rem;
     font-weight: bold;
 }
 
-table .first-head
-{
+table .first-head {
     background-color: rgb(105, 209, 231);
     text-align: center;
 }
 
-table .second-head
-{
+table .second-head {
     background-color: rgb(44, 47, 55);
     color: #fff;
     text-align: left;
 } */
 
-table td
-{
+table td {
     border: solid rgb(201, 202, 202) 1px;
     border-collapse:collapse;
     padding: 1rem;
@@ -208,28 +196,24 @@ ul {
     padding: 3rem 0;
 }
 
-li
-{
+li {
     margin-left: 6rem;
     width: fit-content;
     list-style: disc;
     font-weight: bold;
 }
 
-.span
-{
+.span {
     font-weight: normal;
     font-style: italic;
 }
 
-span
-{
+span {
     font-weight: bold;
     font-style: italic;
 }
 
-/* #work
-{
+/* #work {
     background-color: rgb(239, 240, 240);
     text-align: center;
     height: 75rem;
@@ -237,13 +221,11 @@ span
     line-height: 2rem;
 }
 
-#work .title
-{
+#work .title {
     background-color: rgb(239, 240, 240);
 }
 
-#work #cards
-{
+#work #cards {
     width: 90%;
     margin: 2rem auto auto auto;
     display: flex;
@@ -251,30 +233,26 @@ span
     justify-content: center;
 }
 
-#work article
-{
+#work article {
     display: flex;
     flex-direction: column;
     width: 31%;
 }
 
-#work img
-{
+#work img {
     display: block;
     margin: auto;
     width: 200px;
     border: solid #fff 10px;
 }
 
-#work h4
-{
+#work h4 {
     font-size: 3.2rem;
     font-weight: bold;
     padding: 3.5rem;
 }
 
-#work p
-{
+#work p {
     text-align: center;
     width: 83%;
     margin: auto;
@@ -282,8 +260,7 @@ span
     border-bottom: solid rgb(105, 209, 231) 1px;
 }
 
-#work button
-{
+#work button {
     width: 83%;
     margin: auto;
     margin-top: 1.8rem;
@@ -293,8 +270,7 @@ span
     color: #fff;
 }
 
-#contact
-{
+#contact {
     background-color: rgb(44, 47, 55);
     text-align: center;
     height: 75rem;
@@ -302,35 +278,30 @@ span
     line-height: 2rem;
 }
 
-#contact .flex-contact
-{
+#contact .flex-contact {
     display: flex;
     width: 90%;
     margin: auto;
     gap: 2rem;
 }
 
-#contact .title
-{
+#contact .title {
     background-color: rgb(44, 47, 55);
     color: lightgray;
 }
 
-#contact #left
-{
+#contact #left {
     width: 270%;
     padding: 3rem 3rem 3rem 1rem;
     border-right: lightgray solid 1px;
 }
 
-#contact #right
-{
+#contact #right {
     padding: 3rem 5rem 0 3rem;
     text-align: left;
 }
 
-#contact form
-{
+#contact form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -339,15 +310,13 @@ span
 #contact form #div-subject,
 #contact form #div-nickname,
 #contact form #div-email,
-#contact form #div-message
-{
+#contact form #div-message {
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
-#contact form #div-gender
-{
+#contact form #div-gender {
     display: flex;
     flex-direction: row;
     gap: 1rem;
@@ -355,42 +324,36 @@ span
 }
 
 #contact input[type=text],
-#contact select
-{
+#contact select {
     background-color: rgb(86, 89, 95);
     border: none;
     height: 5rem;
     padding: 1rem;
 }
 
-#contact #div-message input
-{
+#contact #div-message input {
     background-color: rgb(86, 89, 95);
     border: none;
     padding: 1rem;
     height: 15rem;
 }
 
-#contact select
-{
+#contact select {
     color: rgb(90, 164, 218);
 }
 
-::placeholder
-{
+::placeholder {
     color: rgb(90, 164, 218);
     vertical-align: top;
 }
 
-.buttons-form
-{
+.buttons-form {
     display: flex;
     flex-direction: row;
     gap: 2rem;
 }
 
-.buttons-form input
-{
+.buttons-form input {
     padding: 1.5rem 1rem;
     border: none;
     border-radius: .8rem .8rem;
@@ -399,8 +362,7 @@ span
     color: rgb(65, 69, 76);
 } */
 
-footer
-{
+footer {
     text-align: center;
     background-color: #000;
     color: #fff;
