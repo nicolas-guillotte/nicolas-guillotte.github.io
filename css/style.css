@@ -69,7 +69,8 @@ h3 {
 /* ... (autres styles restent inchangés) */
 
 #intro,
-#bio {
+#bio,
+#exp {
     height: 60rem;
 }
 
@@ -166,25 +167,43 @@ h3 {
     line-height: 2rem;
 }
 
-/* table {
-    width: 100%;
+
+#exp {
+    background-color: rgb(170, 210, 24);
+    text-align: center;
+    color: #000000;
+    line-height: 2rem;
 }
 
-table th {
-    padding: 1rem;
+#exp .title {
+    background-color: rgb(170, 210, 24);
+    color: #000000;
+}
+
+#exp .title-div {
+    display: block;
+    margin: auto;
+    width: 87%;
+}
+
+#exp p {
+    text-align: left;
+    padding: 2rem 0;
+    line-height: 2rem;
+}
+
+#exp span {
     font-weight: bold;
 }
 
-table .first-head {
-    background-color: rgb(105, 209, 231);
-    text-align: center;
+#exp .exp {
+    background-color: rgb(170, 210, 24);
+    margin: 1rem 0;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px 1px black;
 }
 
-table .second-head {
-    background-color: rgb(44, 47, 55);
-    color: #fff;
-    text-align: left;
-} */
 
 table td {
     border: solid rgb(201, 202, 202) 1px;
@@ -212,155 +231,6 @@ span {
     font-weight: bold;
     font-style: italic;
 }
-
-/* #work {
-    background-color: rgb(239, 240, 240);
-    text-align: center;
-    height: 75rem;
-    color: black;
-    line-height: 2rem;
-}
-
-#work .title {
-    background-color: rgb(239, 240, 240);
-}
-
-#work #cards {
-    width: 90%;
-    margin: 2rem auto auto auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-#work article {
-    display: flex;
-    flex-direction: column;
-    width: 31%;
-}
-
-#work img {
-    display: block;
-    margin: auto;
-    width: 200px;
-    border: solid #fff 10px;
-}
-
-#work h4 {
-    font-size: 3.2rem;
-    font-weight: bold;
-    padding: 3.5rem;
-}
-
-#work p {
-    text-align: center;
-    width: 83%;
-    margin: auto;
-    padding-bottom: 1.8rem;
-    border-bottom: solid rgb(105, 209, 231) 1px;
-}
-
-#work button {
-    width: 83%;
-    margin: auto;
-    margin-top: 1.8rem;
-    padding: 1.2rem;
-    background-color: rgb(105, 209, 231);
-    border: none;
-    color: #fff;
-}
-
-#contact {
-    background-color: rgb(44, 47, 55);
-    text-align: center;
-    height: 75rem;
-    color: lightgray;
-    line-height: 2rem;
-}
-
-#contact .flex-contact {
-    display: flex;
-    width: 90%;
-    margin: auto;
-    gap: 2rem;
-}
-
-#contact .title {
-    background-color: rgb(44, 47, 55);
-    color: lightgray;
-}
-
-#contact #left {
-    width: 270%;
-    padding: 3rem 3rem 3rem 1rem;
-    border-right: lightgray solid 1px;
-}
-
-#contact #right {
-    padding: 3rem 5rem 0 3rem;
-    text-align: left;
-}
-
-#contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-#contact form #div-subject,
-#contact form #div-nickname,
-#contact form #div-email,
-#contact form #div-message {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-#contact form #div-gender {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: flex-start;
-}
-
-#contact input[type=text],
-#contact select {
-    background-color: rgb(86, 89, 95);
-    border: none;
-    height: 5rem;
-    padding: 1rem;
-}
-
-#contact #div-message input {
-    background-color: rgb(86, 89, 95);
-    border: none;
-    padding: 1rem;
-    height: 15rem;
-}
-
-#contact select {
-    color: rgb(90, 164, 218);
-}
-
-::placeholder {
-    color: rgb(90, 164, 218);
-    vertical-align: top;
-}
-
-.buttons-form {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-}
-
-.buttons-form input {
-    padding: 1.5rem 1rem;
-    border: none;
-    border-radius: .8rem .8rem;
-    font-weight: bold;
-    background-color: rgb(105, 209, 231);
-    color: rgb(65, 69, 76);
-} */
 
 footer {
     text-align: center;
