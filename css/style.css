@@ -288,7 +288,13 @@ h3 {
 }
 
 .tftable td {
-    background-color: rgb(22, 0, 179);
+    padding: 1.2rem;
+    transition: background-color 0.5s ease;
+}
+
+.tftable td:hover {
+    background-color: #e0f7fa; /* Couleur de fond au survol */
+    color: black;
 }
 
 .tftable i {
