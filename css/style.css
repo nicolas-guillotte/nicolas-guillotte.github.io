@@ -102,7 +102,7 @@ h3 {
     margin: auto;
     position: relative;
     top: -2rem;
-    width: 18rem;
+    width: fit-content;
     padding: 2rem;
     order: 1000;
     color: #000;
