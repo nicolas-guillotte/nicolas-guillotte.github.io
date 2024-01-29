@@ -39,19 +39,31 @@ header img {
     background-color: #fff;
     border: 3px solid #fff; /* Ajoutez une bordure blanche de 2px */
     border-radius: 50%; /* Ajoutez un cadre arrondi pour une image de profil */
+    transition: transform 0.6s ease; /* Ajoute une transition fluide à la transformation */
+}
+
+header img:hover {
+    transform: scale(1.2) rotate(10deg); /* Effet d'agrandissement et de rotation au survol */
 }
 
 nav {
+    padding: 0 1rem;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.1);
     display: flex;
-    gap: 2rem;
     color: lightgray;
     font-size: 1.3rem;
     width: fit-content;
-    padding: 1.8rem 2.8rem 1.8rem 3rem;
     border: solid rgba(128, 128, 128, 0.5) 1px;
     border-bottom-right-radius: .8rem .8rem;
+}
+
+nav a {
+    padding: 1.8rem 1rem;
+}
+
+nav a:hover {
+    font-weight: bold;
 }
 
 h1 {
@@ -96,6 +108,11 @@ h3 {
     color: #000;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    transition: transform 0.3s ease; /* Ajoute une transition fluide à la transformation */
+}
+
+.title:hover {
+    transform: translateY(-5px); /* Fait monter le titre de 5px lors du survol */
 }
 
 #intro .title {
@@ -127,19 +144,62 @@ h3 {
 
 .intro-buttons button {
     padding: 1.5rem 1rem;
-    border: solid rgb(65, 69, 76) 2px;
     border-radius: .8rem .8rem;
     font-weight: bold;
 }
 
+.intro-buttons button:hover {
+    animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(1px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-1px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(1px, 0, 0);
+    }
+  }
+
 .intro-buttons #first-button {
-    background-color: rgb(65, 69, 76);
+    background-color: black;
     color: #fff;
+    border: solid black 2px;
 }
 
 .intro-buttons #second-button {
-    background-color: #fff;
-    color: rgb(65, 69, 76);
+    background-color: rgb(22, 0, 179);
+    color: #fff;
+    border: solid rgb(22, 0, 179) 2px;
+}
+
+.intro-buttons #download-button {
+    background-color: rgb(170, 210, 24);
+    color: black;
+    border: solid rgb(170, 210, 24) 2px;
+}
+
+.intro-buttons i {
+    font-size: 13px;
+    position: relative;
+    right: 30px;
+    top: -10px;
+    background-color: black;
+    color: rgb(170, 210, 24);
+    padding: 3px;
+    border-radius: 50%;
 }
 
 #bio {
@@ -239,10 +299,24 @@ span {
 }
 
 footer {
+    display: flex;
+    justify-content: center;
     text-align: center;
     background-color: #000;
     color: #fff;
     padding: 6rem 5rem 5rem 6rem;
+}
+
+footer p {
+    width: fit-content;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    box-shadow: -5px -5px 20px #212121,  5px 5px 20px #141414;
+    transition: all 0.2s ease-in-out;
+}
+
+footer p:hover {
+    box-shadow: -2px -2px 5px #212121, 2px 2px 5px #141414;
 }
 
 @media screen and (min-width: 1418px) {
