@@ -8,12 +8,10 @@ html {
     background-color: #000;
 }
 
-
 body {
     font-size: 1.6rem;
     display: block;
     margin: auto;
-    max-width: 800px;
     background-color: #fff;
 }
 
@@ -22,7 +20,6 @@ body {
         min-width: 650px;
     }
 }
-
 
 header {
     background-image: url('../images/background.jpg');
@@ -59,28 +56,25 @@ h2 {
     font-size: 2rem;
 }
 
-
 h3 {
     font-size: 1.8rem;
     font-weight: bold;
     text-align: center;
 }
 
-/* ... (autres styles restent inchangés) */
-
 #intro,
 #bio,
 #exp {
-    height: 60rem;
+    height: fit-content;
+    flex: 1;
 }
 
 #intro {
-    background-color: rgb(255, 248, 255);
+    background-color: #fff;
     text-align: center;
     color: black;
     line-height: 2rem;
 }
-
 
 .title {
     display: block;
@@ -147,6 +141,7 @@ h3 {
 #bio .title {
     background-color: rgb(22, 0, 179);
     color: #fff;
+    margin-top: 4rem;
 }
 
 #bio .title-div {
@@ -173,6 +168,7 @@ h3 {
     text-align: center;
     color: #000000;
     line-height: 2rem;
+    padding-bottom: 1rem;
 }
 
 #exp .title {
@@ -237,4 +233,17 @@ footer {
     background-color: #000;
     color: #fff;
     padding: 6rem 5rem 5rem 6rem;
+}
+
+@media screen and (min-width: 1418px) {
+    .sections {
+        display: flex;
+    }
+
+    #intro,
+    #bio,
+    #exp {
+        width: 33.333%;
+        height: 750px;
+    }
 }
