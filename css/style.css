@@ -330,4 +330,8 @@ footer p:hover {
         width: 33.333%;
         height: 750px;
     }
+
+    nav {
+        display: none;
+    }
 }
