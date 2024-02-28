@@ -265,7 +265,7 @@ h3 {
 
 #exp .exp {
     background-color: rgb(170, 210, 24);
-    margin: 1rem 0;
+    margin: 2rem 0 1rem;
     padding: 3rem;
     border-radius: 20px;
     box-shadow: 2px 2px 5px 1px black;
