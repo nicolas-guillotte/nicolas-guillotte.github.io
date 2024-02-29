@@ -133,6 +133,8 @@ h3 {
     padding: 3rem;
     font-size: 2.5rem;
     line-height: 4rem;
+    width: 80%;
+    margin: 2rem auto;
 }
 
 .intro-buttons {
@@ -186,9 +188,9 @@ h3 {
 }
 
 .intro-buttons #download-button {
-    background-color: rgb(170, 210, 24);
+    background-color: #f5dbb5;
     color: black;
-    border: solid rgb(170, 210, 24) 2px;
+    border: solid #f5dbb5 2px;
 }
 
 .intro-buttons i {
@@ -197,7 +199,7 @@ h3 {
     right: 30px;
     top: -10px;
     background-color: black;
-    color: rgb(170, 210, 24);
+    color: #f5dbb5;
     padding: 3px;
     border-radius: 50%;
 }
@@ -235,7 +237,7 @@ h3 {
 
 
 #exp {
-    background-color: rgb(170, 210, 24);
+    background-color: #f5dbb5;
     text-align: center;
     color: #000000;
     line-height: 2rem;
@@ -243,7 +245,7 @@ h3 {
 }
 
 #exp .title {
-    background-color: rgb(170, 210, 24);
+    background-color: #f5dbb5;
     color: #000000;
 }
 
@@ -264,7 +266,7 @@ h3 {
 }
 
 #exp .exp {
-    background-color: rgb(170, 210, 24);
+    background-color: #f5dbb5;
     margin: 2rem 0 1rem;
     padding: 3rem;
     border-radius: 20px;
