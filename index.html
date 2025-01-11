@@ -1,5 +1,243 @@
 <!DOCTYPE html>
 <html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Volcan des Émotions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 100vh;
+        }
+        #volcano-container {
+            position: relative;
+            margin: 0 auto;
+            width: 626px;
+            height: 263px;
+        }
+        #volcano {
+            width: 100%;
+            height: 100%;
+            background: url('./images/volcan.jpg') no-repeat center/cover;
+            cursor: pointer;
+        }
+        
+        #explosion {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            display: none;
+            animation: explode 2s ease-out forwards;
+        }
+        @keyframes explode {
+            0% { transform: translate(-10%, 90px); opacity: 1; }
+            100% { transform: translate(-10%, -120px); opacity: 0; }
+        }
+        .liste button {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            border: none;
+            background-color: #fff;
+        }
+        .input-list-container {
+            display: none;
+            text-align: left;
+            position: absolute;
+            top: 25px;
+            left: 5px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        #emotion-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        #emotion-list li {
+            display: flex;
+            justify-content: space-between;
+        }
+        input {
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #volcano.shrink {
+            transform: scale(0.97); /* Réduire à 80% de la taille originale */
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <div id="volcano-container">
+        <div id="volcano" onclick="erupt()"></div>
+        <div id="explosion">💥 <span id="emotion"></span></div>
+    </div>
+    <div class="liste">
+        <button><i class="fas fa-bars"></i></button>
+    </div>
+    <div class="input-list-container" id="input-list">
+        <input type="text" placeholder="Ajouter une émotion">
+        <ul id="emotion-list"></ul>
+    </div>
+    <script>
+        const emotions = [
+            'Joie', 'Tristesse', 'Colère', 'Excitation', 'Peur', 'Surprise', 'Dégoût', 'Amour'
+        ];
+
+        function erupt() {
+            const explosion = document.getElementById('explosion');
+            const emotion = document.getElementById('emotion');
+            const randomEmotion = emotions[Math.floor(Math.random() * emotions.length)];
+            
+            emotion.textContent = randomEmotion;
+            explosion.style.display = 'block';
+
+            setTimeout(() => {
+                explosion.style.display = 'none';
+            }, 1500);
+        }
+
+        function addEmotionToList(emotion) {
+            const emotionList = document.getElementById('emotion-list');
+
+            // Ajouter l'émotion au tableau si elle est nouvelle
+            if (!emotions.includes(emotion)) {
+                emotions.push(emotion);
+            }
+
+            const listItem = document.createElement('li');
+
+            const label = document.createElement('label');
+            label.htmlFor = emotion;
+            label.textContent = emotion;
+
+            const iconContainer = document.createElement('div');  // Div pour regrouper les icônes
+            iconContainer.style.display = 'flex';
+
+            const editButton = document.createElement('i');
+            editButton.className = 'fa fa-edit';
+            editButton.style.cursor = 'pointer';
+            editButton.style.marginLeft = '10px';
+            editButton.addEventListener('click', () => editEmotion(listItem, label, emotion));
+
+            const deleteButton = document.createElement('i');
+            deleteButton.className = 'fa fa-trash';
+            deleteButton.style.cursor = 'pointer';
+            deleteButton.style.marginLeft = '10px';
+            deleteButton.addEventListener('click', () => {
+                listItem.remove();
+                // Retirer l'émotion du tableau
+                const index = emotions.indexOf(emotion);
+                if (index !== -1) {
+                    emotions.splice(index, 1);
+                }
+            });
+
+            iconContainer.appendChild(editButton);
+            iconContainer.appendChild(deleteButton);
+
+            listItem.appendChild(label);
+            listItem.appendChild(iconContainer);  // Ajouter la div avec les icônes
+            emotionList.appendChild(listItem);
+        }
+
+        function editEmotion(listItem, label, oldEmotion) {
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = label.textContent;
+            listItem.replaceChild(input, label);
+
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && input.value.trim() !== '') {
+                    const newEmotion = input.value.trim();
+                    label.textContent = newEmotion;
+                    listItem.replaceChild(label, input);
+                    updateEmotionInArray(oldEmotion, newEmotion);
+                }
+            });
+
+            input.addEventListener('blur', () => {
+                const newEmotion = input.value.trim() || oldEmotion;
+                label.textContent = newEmotion;
+                listItem.replaceChild(label, input);
+                updateEmotionInArray(oldEmotion, newEmotion);
+            });
+        }
+
+        function updateEmotionInArray(oldEmotion, newEmotion) {
+            const index = emotions.indexOf(oldEmotion);
+            if (index !== -1) {
+                emotions[index] = newEmotion;
+            }
+        }
+
+        document.querySelector('.liste button').addEventListener('click', () => {
+            const inputListContainer = document.getElementById('input-list');
+            const emotionList = document.getElementById('emotion-list');
+            const inputField = inputListContainer.querySelector('input');
+            const button = document.querySelector('.liste button');
+
+            // Toggle display of the input list container
+            inputListContainer.style.display = inputListContainer.style.display === 'none' ? 'block' : 'none';
+
+            if (emotionList.innerHTML === '') {
+                emotions.forEach(emotion => {
+                    addEmotionToList(emotion);
+                });
+            }
+
+            // Add event listener to input for adding new items
+            inputField.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && inputField.value.trim() !== '') {
+                    addEmotionToList(inputField.value.trim());
+                    inputField.value = '';  // Clear the input field
+                }
+            });
+
+            // Change button text if the input list container is open
+            if (inputListContainer.style.display === 'block') {
+                button.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                button.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        const volcanoElement = document.getElementById('volcano');
+
+        volcanoElement.addEventListener('mousedown', () => {
+            volcanoElement.classList.add('shrink');  // Réduit la taille
+        });
+
+        volcanoElement.addEventListener('mouseup', () => {
+            volcanoElement.classList.remove('shrink');  // Rétablit la taille
+        });
+
+        // Optionnel : gérer l'événement mouseout pour rétablir la taille si la souris quitte l'élément sans relâcher
+        volcanoElement.addEventListener('mouseout', () => {
+            volcanoElement.classList.remove('shrink');
+        });
+    </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -109,4 +347,4 @@
     </footer>
 </body>
 
-</html>
+</html> -->
