@@ -294,8 +294,8 @@ h3 {
     transition: background-color 0.5s ease;
 }
 
-.tftable td:hover {
-    background-color: #e0f7fa; /* Couleur de fond au survol */
+.tftable td:not(:empty):hover {
+    background-color: #e0f7fa;
     color: black;
 }
 
