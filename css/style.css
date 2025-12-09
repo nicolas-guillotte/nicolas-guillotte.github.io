@@ -81,6 +81,57 @@ h3 {
     text-align: center;
 }
 
+em {
+    font-style: italic;
+}
+
+ul {
+    padding-left: 2rem;
+    margin: 1.5rem 0; /* Adds margin to the list */
+    line-height: 1.6; /* Increases line height for better readability */
+}
+
+li {
+    margin: 1rem 0;
+    padding-left: 0.5rem; /* Adds padding to the left of each list item */
+    position: relative; /* Allows for custom bullet styling */
+}
+
+li::before {
+    content: ''; /* Custom bullet */
+    position: absolute;
+    left: -1.5rem; /* Adjusts position of the bullet */
+    top: 0.5rem; /* Centers the bullet vertically */
+    width: 0.5rem; /* Bullet size */
+    height: 0.5rem; /* Bullet size */
+    background-color: #000; /* Bullet color */
+    border-radius: 50%; /* Makes the bullet circular */
+}
+
+.code-list { 
+    background-color: #212121; 
+    color: #f5f5f5; 
+    font-family: 'Fira Mono', 'Consolas', monospace; 
+    border-radius: 8px; 
+    border: 1px solid #444; 
+    padding: 1.5rem; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
+    list-style-type: none; 
+}
+
+.code-list li { 
+    padding: 0.5rem 1rem; 
+    margin: 0.5rem 0; 
+    border-left: 4px solid #3a3a3a; 
+    background: rgba(255,255,255,0.03); 
+    font-size: 1.5rem; 
+    position: static; 
+}
+
+.code-list li::before { 
+    content: none; 
+}
+
 #intro,
 #bio,
 #exp {
@@ -91,7 +142,7 @@ h3 {
 
 #intro {
     background-color: #fff;
-    text-align: center;
+    text-align: left;
     color: black;
     line-height: 2rem;
     padding-bottom: 4rem;
@@ -122,7 +173,7 @@ h3 {
 .intro-flex {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     gap: 1.7rem;
     padding: 0 5rem;
 }
@@ -138,6 +189,7 @@ h3 {
 }
 
 .intro-buttons {
+    align-self: center;
     display: flex;
     flex-direction: row;
     gap: 1.8rem;
@@ -338,16 +390,23 @@ footer p:hover {
     box-shadow: -2px -2px 5px #212121, 2px 2px 5px #141414;
 }
 
+strong {
+    font-weight: bold;
+}
+
 @media screen and (min-width: 1702px) {
     .sections {
         display: flex;
+        align-items: stretch;
     }
 
     #intro,
     #bio,
     #exp {
-        width: 33.333%;
-        height: 1115px;
+        flex: 1 1 0;
+        height: auto;
+        min-height: 0;
+        box-sizing: border-box;
     }
 
     nav {
