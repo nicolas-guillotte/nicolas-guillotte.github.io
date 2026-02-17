@@ -38,7 +38,10 @@
                     </strong>
                 </div> -->
                 <p>👋 Salut, moi c’est Nicolas</p>
-                <p><strong>Développeur en agence web depuis 2 ans</strong>, spécialisé PHP / VueJS, passionné par l’architecture backend, la performance, l’observabilité et les systèmes distribués.</p>
+                <p><strong>Développeur web avec 2 ans d’expérience en agence, spécialisé dans les applications back-office, intégrations API et automatisations pour des sites e-commerce.</strong>
+                    <br>
+                    <br>
+                    J’interviens sur le cycle complet d’une fonctionnalité : analyse technique, développement, tests, mise en production et fiabilisation.</p>
                 <p><strong>Titulaire du Titre Professionnel DWWM (Bac+2, avril 2024)</strong>.</p>
                 <br>
                 <p>📌 Ce que je fais au quotidien :</p>
@@ -124,22 +127,31 @@
             <div class="title-div">
                 <div class="exp">
                     <p>
-                        <span class="exp-title">Clikeo - En poste depuis 2024</span>
+                        <span class="exp-title">Clikeo - En poste depuis Août 2024</span>
                     </p>
                     <p>
-                        Import back-office (~15 000 produits) : <br><i class="fa-solid fa-arrow-right"></i> <em>Réduction du temps de traitement</em>
+                        Conception et développement de fonctionnalités back-office utilisées en production pour des sites e-commerce.
                     </p>
                     <p>
-                        Développement d'un outil de sélection de points relais MondialRelay : <br><i class="fa-solid fa-arrow-right"></i> <em>Amélioration de 30% du taux de conversion</em>
+                        Développement d’un module de sélection de point relais (API Mondial Relay) intégré au tunnel de commande.
                     </p>
                     <p>
-                        Intégration d'API et Webservices externes : <br><i class="fa-solid fa-arrow-right"></i> <em>Automatisations internes</em>
+                        Intégration d’un système de gestion de tickets via API Zendesk dans un back-office interne.
                     </p>
                     <p>
-                        Refonte de formulaires VueJS : <br><i class="fa-solid fa-arrow-right"></i> <em>Simplification et accélération de la saisie</em>
+                        Mise en place d’un test automatisé end-to-end simulant des commandes e-commerce (2×/jour), vérifiant promotions et cohérence des prix jusqu’au paiement, avec alerting Slack en cas d’anomalie.
                     </p>
                     <p>
-                        Plugin interne de traduction assistée IA : <br><i class="fa-solid fa-arrow-right"></i> <em>Accélération production multilingue</em>
+                        Création d’un module d’analyse RFM avec KPI pour la segmentation client et le pilotage marketing.
+                    </p>
+                    <p>
+                        Développement d’un plugin de traduction assistée IA pour accélérer la production multilingue.
+                    </p>
+                    <p>
+                        Automatisation d’un import produit massif (~15k produits) avec contrôles, logs et optimisation des traitements.
+                    </p>
+                    <p>
+                        Prise en charge complète des fonctionnalités : analyse technique, développement, tests et mise en production.
                     </p>
                 </div>
                 <!-- <div class="exp">
@@ -170,249 +182,7 @@
         </section>
     </div>
     <footer>
-        <p>Nicolas Guillotte &#169; 2025</p>
+        <p>Nicolas Guillotte &#169; 2026</p>
     </footer>
 </body>
-
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Volcan des Émotions</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            min-height: 100vh;
-        }
-        #volcano-container {
-            position: relative;
-            width: 70%; /* Limite la largeur à 70% */
-            margin: 0 auto; /* Centre le conteneur horizontalement */
-        }
-        #volcano {
-            width: 100%;
-            height: auto; /* Maintient le ratio naturel de l'image */
-            cursor: pointer;
-            display: block;
-        }
-        
-        #explosion {
-            position: absolute;
-            top: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 30px;
-            font-weight: bold;
-            color: red;
-            display: none;
-            animation: explode 2s ease-out forwards;
-        }
-        @keyframes explode {
-            0% { transform: translate(-10%, 90px); opacity: 1; }
-            100% { transform: translate(-10%, -120px); opacity: 0; }
-        }
-        .liste {
-            font-size: 20px;
-        }
-        .liste button {
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            border: none;
-            background-color: #fff;
-        }
-        .input-list-container {
-            display: none;
-            text-align: left;
-            position: absolute;
-            top: 25px;
-            left: 5px;
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        #emotion-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        #emotion-list li {
-            display: flex;
-            justify-content: space-between;
-        }
-        input {
-            padding: 5px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        #volcano.shrink {
-            transform: scale(0.97); /* Réduire à 80% de la taille originale */
-            transition: transform 0.3s ease;
-        }
-    </style>
-</head>
-<body>
-    <h1></h1>
-    <div id="volcano-container">
-        <img id="volcano" src="./images/volcan.jpg" alt="Volcan" onclick="erupt()">
-        <div id="explosion">💥 <span id="emotion"></span></div>
-    </div>    
-    <div class="liste">
-        <button><i class="fas fa-bars"></i></button>
-    </div>
-    <div class="input-list-container" id="input-list">
-        <input type="text" placeholder="Ajouter une émotion">
-        <ul id="emotion-list"></ul>
-    </div>
-    <script>
-        const emotions = [
-            'Joie', 'Tristesse', 'Colère', 'Excitation', 'Peur', 'Surprise', 'Dégoût', 'Amour'
-        ];
-
-        function erupt() {
-            const explosion = document.getElementById('explosion');
-            const emotion = document.getElementById('emotion');
-            const randomEmotion = emotions[Math.floor(Math.random() * emotions.length)];
-            
-            emotion.textContent = randomEmotion;
-            explosion.style.display = 'block';
-
-            setTimeout(() => {
-                explosion.style.display = 'none';
-            }, 1500);
-        }
-
-        function addEmotionToList(emotion) {
-            const emotionList = document.getElementById('emotion-list');
-
-            // Ajouter l'émotion au tableau si elle est nouvelle
-            if (!emotions.includes(emotion)) {
-                emotions.push(emotion);
-            }
-
-            const listItem = document.createElement('li');
-
-            const label = document.createElement('label');
-            label.htmlFor = emotion;
-            label.textContent = emotion;
-
-            const iconContainer = document.createElement('div');  // Div pour regrouper les icônes
-            iconContainer.style.display = 'flex';
-
-            const editButton = document.createElement('i');
-            editButton.className = 'fa fa-edit';
-            editButton.style.cursor = 'pointer';
-            editButton.style.marginLeft = '10px';
-            editButton.addEventListener('click', () => editEmotion(listItem, label, emotion));
-
-            const deleteButton = document.createElement('i');
-            deleteButton.className = 'fa fa-trash';
-            deleteButton.style.cursor = 'pointer';
-            deleteButton.style.marginLeft = '10px';
-            deleteButton.addEventListener('click', () => {
-                listItem.remove();
-                // Retirer l'émotion du tableau
-                const index = emotions.indexOf(emotion);
-                if (index !== -1) {
-                    emotions.splice(index, 1);
-                }
-            });
-
-            iconContainer.appendChild(editButton);
-            iconContainer.appendChild(deleteButton);
-
-            listItem.appendChild(label);
-            listItem.appendChild(iconContainer);  // Ajouter la div avec les icônes
-            emotionList.appendChild(listItem);
-        }
-
-        function editEmotion(listItem, label, oldEmotion) {
-            const input = document.createElement('input');
-            input.type = 'text';
-            input.value = label.textContent;
-            listItem.replaceChild(input, label);
-
-            input.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' && input.value.trim() !== '') {
-                    const newEmotion = input.value.trim();
-                    label.textContent = newEmotion;
-                    listItem.replaceChild(label, input);
-                    updateEmotionInArray(oldEmotion, newEmotion);
-                }
-            });
-
-            input.addEventListener('blur', () => {
-                const newEmotion = input.value.trim() || oldEmotion;
-                label.textContent = newEmotion;
-                listItem.replaceChild(label, input);
-                updateEmotionInArray(oldEmotion, newEmotion);
-            });
-        }
-
-        function updateEmotionInArray(oldEmotion, newEmotion) {
-            const index = emotions.indexOf(oldEmotion);
-            if (index !== -1) {
-                emotions[index] = newEmotion;
-            }
-        }
-
-        document.querySelector('.liste button').addEventListener('click', () => {
-            const inputListContainer = document.getElementById('input-list');
-            const emotionList = document.getElementById('emotion-list');
-            const inputField = inputListContainer.querySelector('input');
-            const button = document.querySelector('.liste button');
-
-            // Toggle display of the input list container
-            inputListContainer.style.display = inputListContainer.style.display === 'none' ? 'block' : 'none';
-
-            if (emotionList.innerHTML === '') {
-                emotions.forEach(emotion => {
-                    addEmotionToList(emotion);
-                });
-            }
-
-            // Add event listener to input for adding new items
-            inputField.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' && inputField.value.trim() !== '') {
-                    addEmotionToList(inputField.value.trim());
-                    inputField.value = '';  // Clear the input field
-                }
-            });
-
-            // Change button text if the input list container is open
-            if (inputListContainer.style.display === 'block') {
-                button.innerHTML = '<i class="fas fa-times"></i>';
-            } else {
-                button.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-
-        const volcanoElement = document.getElementById('volcano');
-
-        volcanoElement.addEventListener('mousedown', () => {
-            volcanoElement.classList.add('shrink');  // Réduit la taille
-        });
-
-        volcanoElement.addEventListener('mouseup', () => {
-            volcanoElement.classList.remove('shrink');  // Rétablit la taille
-        });
-
-        // Optionnel : gérer l'événement mouseout pour rétablir la taille si la souris quitte l'élément sans relâcher
-        volcanoElement.addEventListener('mouseout', () => {
-            volcanoElement.classList.remove('shrink');
-        });
-    </script>
-</body>
-</html> -->
